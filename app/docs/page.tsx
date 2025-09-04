@@ -26,7 +26,7 @@ export default function DocsPage() {
         <div className="container mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4">
           <div className="flex items-center">
             <Link className="flex items-center space-x-2 mr-8" href="/">
-              <Image src="/devspace-logo.png" alt="Devspace" width={32} height={32} className="rounded" />
+              <Image src="/Diseño_sin_título-removebg-preview.png" alt="Devspace" width={32} height={32} className="rounded" />
               <span className="font-bold text-xl">Devspace</span>
             </Link>
             <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -39,14 +39,8 @@ export default function DocsPage() {
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="hidden md:block">
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Buscar en la documentación..." className="pl-8 w-[300px] lg:w-[400px]" />
-              </div>
-            </div>
             <Button variant="outline" size="sm" asChild>
-              <Link href="https://github.com/devspace" target="_blank">
+              <Link href="https://github.com/santvallejos/DevSpace-App" target="_blank">
                 <Github className="h-4 w-4 mr-2" />
                 GitHub
               </Link>
@@ -75,20 +69,20 @@ export default function DocsPage() {
                     className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
                   >
                     <Download className="mr-2 h-4 w-4" />
-                    Instalación
+                    Instalación y Configuración
+                  </Link>
+                  <Link
+                    href="#api-installation"
+                    className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Settings className="mr-2 h-4 w-4" />
+                    Instalación Solo API
                   </Link>
                 </div>
               </div>
-              <div>
+{/*               <div>
                 <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">Guías</h4>
                 <div className="grid grid-flow-row auto-rows-max text-sm">
-                  <Link
-                    href="#guide"
-                    className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
-                  >
-                    <FileText className="mr-2 h-4 w-4" />
-                    Guía de Uso
-                  </Link>
                   <Link
                     href="#configuration"
                     className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
@@ -96,8 +90,15 @@ export default function DocsPage() {
                     <Settings className="mr-2 h-4 w-4" />
                     Configuración
                   </Link>
+                  <Link
+                    href="#guide"
+                    className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <FileText className="mr-2 h-4 w-4" />
+                    Guía de Uso
+                  </Link>
                 </div>
-              </div>
+              </div> */}
               <div>
                 <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">Comunidad</h4>
                 <div className="grid grid-flow-row auto-rows-max text-sm">
@@ -173,10 +174,9 @@ export default function DocsPage() {
                       <div className="space-y-2">
                         <h4 className="font-semibold">Características principales:</h4>
                         <ul className="space-y-1 text-sm text-muted-foreground">
-                          <li>• Dashboard personalizable</li>
-                          <li>• Integración con Git</li>
-                          <li>• Gestión de proyectos</li>
-                          <li>• Acceso rápido a herramientas</li>
+                          <li>• Dashboard </li>
+                          <li>• Navegación dentro de tu unidad</li>
+                          <li>• Acceso rápido a tus recursos</li>
                         </ul>
                       </div>
                       <div className="space-y-2">
@@ -184,7 +184,6 @@ export default function DocsPage() {
                         <ul className="space-y-1 text-sm text-muted-foreground">
                           <li>• Mayor productividad</li>
                           <li>• Flujo de trabajo optimizado</li>
-                          <li>• Menos cambios de contexto</li>
                           <li>• Organización centralizada</li>
                         </ul>
                       </div>
@@ -195,10 +194,23 @@ export default function DocsPage() {
 
               {/* Installation */}
               <section id="installation" className="space-y-6">
-                <div className="space-y-2">
+                <div>
+                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Requisitos del Sistema</h2>
+                  <p>Para instalar Devspace, asegúrate de que tu sistema cumpla con los siguientes requisitos:</p>
+
+                  <div className="p-4 space-y-2">
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• .Net 9.0</li>
+                      <li>• Url de conexión de Mongo Atlas</li>
+                    </ul>
+                  </div>
+                </div>
+
+
+                {/*                 <div className="space-y-2">
                   <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Instalación</h2>
                   <p className="text-muted-foreground text-pretty">
-                    Instala Devspace en tu sistema operativo preferido siguiendo estos pasos.
+                    Instala Devspace en tu sistema operativo
                   </p>
                 </div>
 
@@ -242,9 +254,262 @@ export default function DocsPage() {
                       <p className="text-xs text-muted-foreground mt-2">Próximamente</p>
                     </CardContent>
                   </Card>
+                </div> */}
+
+                {/* Instalacion de Devspace */}
+                <div className="space-y-6">
+                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Instalación y Configuración</h2>
+                  
+                  <div className="space-y-8">
+                    {/* Paso 1: Clonar repositorio */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            1
+                          </div>
+                          Clonar el repositorio
+                        </CardTitle>
+                        <CardDescription>Descarga el código fuente de Devspace</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          Clona el repositorio oficial de Devspace desde GitHub:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4">
+                            <code className="text-sm">git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                          </CardContent>
+                        </Card>
+                        <Button variant="outline" asChild>
+                          <Link href="https://github.com/santvallejos/DevSpace-App" target="_blank">
+                            Ver en GitHub
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 2: Abrir proyecto */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            2
+                          </div>
+                          Abrir el proyecto en tu IDE
+                        </CardTitle>
+                        <CardDescription>Abre el proyecto en tu editor de código favorito</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          Abre la carpeta del proyecto clonado en tu IDE preferido (Visual Studio Code, Visual Studio, etc.).
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 3: Instalar dependencias root (opcional) */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            3
+                          </div>
+                          Instalar dependencias del root (Opcional)
+                        </CardTitle>
+                        <CardDescription>Instala las dependencias principales del proyecto</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          En la carpeta raíz del proyecto, instala las dependencias:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4">
+                            <code className="text-sm">npm install</code>
+                          </CardContent>
+                        </Card>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 4: Instalar dependencias del cliente */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            4
+                          </div>
+                          Instalar dependencias del cliente
+                        </CardTitle>
+                        <CardDescription>Configura la aplicación cliente de Devspace</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          Navega al directorio del cliente e instala sus dependencias:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4 space-y-2">
+                            <div><code className="text-sm">cd client</code></div>
+                            <div><code className="text-sm">npm install</code></div>
+                          </CardContent>
+                        </Card>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 5: Configurar API */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            5
+                          </div>
+                          Configurar la API
+                        </CardTitle>
+                        <CardDescription>Navega a la carpeta de la API y configura los archivos de conexión</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          Navega al directorio de la API:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4 space-y-2">
+                            <div><code className="text-sm">cd ../</code></div>
+                            <div><code className="text-sm">cd api</code></div>
+                          </CardContent>
+                        </Card>
+                        
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="font-semibold text-sm mb-2">Crear archivo: 📁 appsettings.json</h4>
+                            <Card className="bg-secondary/50 border-secondary/50">
+                              <CardContent className="pt-4">
+                                <pre className="text-xs overflow-x-auto">
+{`{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*",
+    "MongoDB": {
+        "ConnectionString": "mongodb+srv://<username>:<db_password>@devspace.yu6f9pg.mongodb.net/?retryWrites=true&w=majority&appName=Devspace",
+        "DatabaseName": "Unity"
+    },
+    "ConnectionStrings": {
+        "DefaultConnection": "mongodb://localhost:27017/DevSpace",
+        "Database": "Unity"
+    }
+}`}
+                                </pre>
+                              </CardContent>
+                            </Card>
+                          </div>
+                          
+                          <div>
+                            <h4 className="font-semibold text-sm mb-2">Crear archivo: 📁 appsettings.Development.json</h4>
+                            <Card className="bg-secondary/50 border-secondary/50">
+                              <CardContent className="pt-4">
+                                <pre className="text-xs overflow-x-auto">
+{`{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+    "MongoDB": {
+        "ConnectionString": "mongodb+srv://<username>:<db_password>@devspace.yu6f9pg.mongodb.net/?retryWrites=true&w=majority&appName=Devspace",
+        "DatabaseName": "Unity"
+    } 
+}`}
+                                </pre>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </div>
+
+                        <Card className="bg-amber-50 border-amber-200 dark:bg-amber-950/30 dark:border-amber-800">
+                          <CardContent className="pt-4">
+                            <p className="text-xs text-amber-700 dark:text-amber-300">
+                              🔧 Reemplaza &lt;username&gt; y &lt;db_password&gt; con tus credenciales de MongoDB Atlas obtenidas en el paso anterior.
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 6: Restaurar dependencias .NET */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            6
+                          </div>
+                          Restaurar dependencias .NET
+                        </CardTitle>
+                        <CardDescription>Descarga las dependencias necesarias de .NET</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          Restaura las dependencias de .NET en el directorio de la API:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4">
+                            <code className="text-sm">dotnet restore</code>
+                          </CardContent>
+                        </Card>
+                      </CardContent>
+                    </Card>
+
+                    {/* Paso 7: Ejecutar la API */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            7
+                          </div>
+                          Ejecutar la API
+                        </CardTitle>
+                        <CardDescription>Inicia el servidor de la API de Devspace</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <p className="text-sm text-muted-foreground">
+                          Ejecuta la API para iniciar el servidor:
+                        </p>
+                        <Card className="bg-secondary/50 border-secondary/50">
+                          <CardContent className="pt-4">
+                            <code className="text-sm">dotnet run</code>
+                          </CardContent>
+                        </Card>
+                        <p className="text-sm text-muted-foreground">
+                          La API se iniciará y estará disponible en el puerto configurado (generalmente http://localhost:5250).
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    {/* Estado final */}
+                    <Card className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950/30">
+                      <CardHeader>
+                        <CardTitle className="flex items-center text-green-700 dark:text-green-300">
+                          <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                            ✓
+                          </div>
+                          ¡Instalación Completada! 🎉
+                        </CardTitle>
+                        <CardDescription className="text-green-600 dark:text-green-400">
+                          Devspace está listo para usar
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-green-700 dark:text-green-300">
+                          ¡Excelente! Has completado exitosamente la instalación de Devspace. Ahora puedes proceder con la configuración y comenzar a usar la aplicación.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
 
-                <Card className="border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30">
+                {/*                 <Card className="border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30">
                   <CardHeader>
                     <CardTitle className="text-amber-800 dark:text-amber-200">🚧 Estado de Desarrollo</CardTitle>
                   </CardHeader>
@@ -254,11 +519,224 @@ export default function DocsPage() {
                       primera versión beta. ¡Mantente al tanto en nuestro GitHub!
                     </p>
                   </CardContent>
-                </Card>
+                </Card> */}
+              </section>
+
+              {/* Instalación Solo API */}
+              <section id="api-installation" className="space-y-6">
+                <div className="space-y-2">
+                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
+                    Instalación Solo API
+                  </h2>
+                  <p className="text-muted-foreground text-pretty">
+                    Si solo necesitas ejecutar la API de Devspace, sigue estos pasos simplificados.
+                  </p>
+                </div>
+
+                <div className="space-y-8">
+                  {/* Paso 1: Clonar repositorio */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          1
+                        </div>
+                        Clonar el repositorio
+                      </CardTitle>
+                      <CardDescription>Descarga el código fuente de Devspace</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Clona el repositorio oficial de Devspace desde GitHub:
+                      </p>
+                      <Card className="bg-secondary/50 border-secondary/50">
+                        <CardContent className="pt-4">
+                          <code className="text-sm">git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                        </CardContent>
+                      </Card>
+                      <Button variant="outline" asChild>
+                        <Link href="https://github.com/santvallejos/DevSpace-App" target="_blank">
+                          Ver en GitHub
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+
+                  {/* Paso 2: Navegar a la carpeta API */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          2
+                        </div>
+                        Navegar a la carpeta de la API
+                      </CardTitle>
+                      <CardDescription>Accede directamente al directorio de la API</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Navega al directorio de la API dentro del proyecto clonado:
+                      </p>
+                      <Card className="bg-secondary/50 border-secondary/50">
+                        <CardContent className="pt-4 space-y-2">
+                          <div><code className="text-sm">cd DevSpace-App</code></div>
+                          <div><code className="text-sm">cd api</code></div>
+                        </CardContent>
+                      </Card>
+                    </CardContent>
+                  </Card>
+
+                  {/* Paso 3: Crear archivos de configuración */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          3
+                        </div>
+                        Crear archivos de configuración
+                      </CardTitle>
+                      <CardDescription>Configura la conexión a MongoDB Atlas</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Crea los archivos de configuración necesarios para la API:
+                      </p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Crear archivo: 📁 appsettings.json</h4>
+                          <Card className="bg-secondary/50 border-secondary/50">
+                            <CardContent className="pt-4">
+                              <pre className="text-xs overflow-x-auto">
+{`{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+        }
+    },
+    "AllowedHosts": "*",
+    "MongoDB": {
+        "ConnectionString": "mongodb+srv://<username>:<db_password>@devspace.yu6f9pg.mongodb.net/?retryWrites=true&w=majority&appName=Devspace",
+        "DatabaseName": "Unity"
+    },
+    "ConnectionStrings": {
+        "DefaultConnection": "mongodb://localhost:27017/DevSpace",
+        "Database": "Unity"
+    }
+}`}
+                              </pre>
+                            </CardContent>
+                          </Card>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-semibold text-sm mb-2">Crear archivo: 📁 appsettings.Development.json</h4>
+                          <Card className="bg-secondary/50 border-secondary/50">
+                            <CardContent className="pt-4">
+                              <pre className="text-xs overflow-x-auto">
+{`{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+    "MongoDB": {
+        "ConnectionString": "mongodb+srv://<username>:<db_password>@devspace.yu6f9pg.mongodb.net/?retryWrites=true&w=majority&appName=Devspace",
+        "DatabaseName": "Unity"
+    } 
+}`}
+                              </pre>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </div>
+
+                      <Card className="bg-amber-50 border-amber-200 dark:bg-amber-950/30 dark:border-amber-800">
+                        <CardContent className="pt-4">
+                          <p className="text-xs text-amber-700 dark:text-amber-300">
+                            🔧 Asegúrate de reemplazar &lt;username&gt; y &lt;db_password&gt; con tus credenciales reales de MongoDB Atlas.
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </CardContent>
+                  </Card>
+
+                  {/* Paso 4: Restaurar dependencias .NET */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          4
+                        </div>
+                        Restaurar dependencias .NET
+                      </CardTitle>
+                      <CardDescription>Descarga las dependencias necesarias de .NET</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Restaura las dependencias de .NET para la API:
+                      </p>
+                      <Card className="bg-secondary/50 border-secondary/50">
+                        <CardContent className="pt-4">
+                          <code className="text-sm">dotnet restore</code>
+                        </CardContent>
+                      </Card>
+                    </CardContent>
+                  </Card>
+
+                  {/* Paso 5: Ejecutar la API */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          5
+                        </div>
+                        Ejecutar la API
+                      </CardTitle>
+                      <CardDescription>Inicia el servidor de la API de Devspace</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground">
+                        Ejecuta la API para iniciar el servidor:
+                      </p>
+                      <Card className="bg-secondary/50 border-secondary/50">
+                        <CardContent className="pt-4">
+                          <code className="text-sm">dotnet run</code>
+                        </CardContent>
+                      </Card>
+                      <p className="text-sm text-muted-foreground">
+                        La API se iniciará y estará disponible en el puerto configurado (generalmente http://localhost:5250).
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Estado final */}
+                  <Card className="border-purple-200 bg-purple-50 dark:border-purple-800 dark:bg-purple-950/30">
+                    <CardHeader>
+                      <CardTitle className="flex items-center text-purple-700 dark:text-purple-300">
+                        <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
+                          ✓
+                        </div>
+                        ¡API Lista! 🚀
+                      </CardTitle>
+                      <CardDescription className="text-purple-600 dark:text-purple-400">
+                        La API de Devspace está ejecutándose
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-purple-700 dark:text-purple-300">
+                        ¡Perfecto! La API de Devspace está ejecutándose correctamente. Ya puedes hacer peticiones a la API o conectar una aplicación cliente.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
               </section>
 
               {/* Usage Guide */}
-              <section id="guide" className="space-y-6">
+              {/* <section id="guide" className="space-y-6">
                 <div className="space-y-2">
                   <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Guía de Uso</h2>
                   <p className="text-muted-foreground text-pretty">
@@ -340,73 +818,7 @@ export default function DocsPage() {
                     </CardContent>
                   </Card>
                 </div>
-              </section>
-
-              {/* Configuration */}
-              <section id="configuration" className="space-y-6">
-                <div className="space-y-2">
-                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Configuración</h2>
-                  <p className="text-muted-foreground text-pretty">
-                    Personaliza Devspace según tus necesidades y preferencias de desarrollo.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Configuración General</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="space-y-2">
-                        <h4 className="font-semibold">Tema y Apariencia</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Personaliza el tema, colores y fuentes de la interfaz.
-                        </p>
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-semibold">Atajos de Teclado</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Configura atajos personalizados para acciones frecuentes.
-                        </p>
-                      </div>
-                      <div className="space-y-2">
-                        <h4 className="font-semibold">Notificaciones</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Controla qué notificaciones quieres recibir y cuándo.
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Integraciones</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <h4 className="font-semibold">Control de Versiones</h4>
-                          <ul className="space-y-1 text-sm text-muted-foreground">
-                            <li>• GitHub</li>
-                            <li>• GitLab</li>
-                            <li>• Bitbucket</li>
-                            <li>• Git local</li>
-                          </ul>
-                        </div>
-                        <div className="space-y-2">
-                          <h4 className="font-semibold">Herramientas</h4>
-                          <ul className="space-y-1 text-sm text-muted-foreground">
-                            <li>• VS Code</li>
-                            <li>• Terminal</li>
-                            <li>• Docker</li>
-                            <li>• Navegadores</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </section>
+              </section> */}
 
               {/* Contribute */}
               <section id="contribute" className="space-y-6">
@@ -454,13 +866,7 @@ export default function DocsPage() {
                       <ul className="space-y-2 text-sm">
                         <li>• Comparte el proyecto</li>
                         <li>• Escribe reseñas</li>
-                        <li>• Dona para el desarrollo</li>
-                        <li>• Únete a la comunidad</li>
                       </ul>
-                      <Button variant="outline" className="w-full bg-transparent" disabled>
-                        Donar
-                        <Heart className="ml-2 h-4 w-4" />
-                      </Button>
                     </CardContent>
                   </Card>
                 </div>
@@ -489,7 +895,7 @@ export default function DocsPage() {
                         repositorio de GitHub.
                       </p>
                       <Button variant="outline" className="w-full bg-transparent" asChild>
-                        <Link href="https://github.com/devspace/issues" target="_blank">
+                        <Link href="https://github.com/santvallejos/DevSpace-App/issues" target="_blank">
                           <Github className="mr-2 h-4 w-4" />
                           Crear Issue
                         </Link>
@@ -508,7 +914,7 @@ export default function DocsPage() {
                         contactarnos por email.
                       </p>
                       <Button variant="outline" className="w-full bg-transparent" asChild>
-                        <Link href="mailto:contact@devspace.dev">
+                        <Link href="mailto:vallejossantiago1412@gmail.com">
                           <Mail className="mr-2 h-4 w-4" />
                           Enviar Email
                         </Link>
@@ -539,10 +945,18 @@ export default function DocsPage() {
                       href="#installation"
                       className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
                     >
-                      Instalación
+                      Instalación y Configuración
                     </Link>
                   </li>
                   <li className="mt-0 pt-2">
+                    <Link
+                      href="#api-installation"
+                      className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
+                    >
+                      Instalación Solo API
+                    </Link>
+                  </li>
+{/*                   <li className="mt-0 pt-2">
                     <Link
                       href="#guide"
                       className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
@@ -557,7 +971,7 @@ export default function DocsPage() {
                     >
                       Configuración
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="mt-0 pt-2">
                     <Link
                       href="#contribute"

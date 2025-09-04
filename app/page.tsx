@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Rocket, Code, Zap, Users, Github, Twitter, Mail } from "lucide-react"
+import { ArrowRight, Rocket, Code, Zap, Users, Github, Twitter, Mail, Globe, FileText, Braces } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -32,7 +32,7 @@ export default function HomePage() {
             </nav>
           </div>
           <Button variant="outline" size="sm" asChild>
-            <Link href="https://github.com/devspace" target="_blank">
+            <Link href="https://github.com/santvallejos/DevSpace-App" target="_blank">
               <Github className="h-4 w-4 mr-2" />
               GitHub
             </Link>
@@ -160,39 +160,91 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Code className="h-6 w-6 text-primary" />
+            {/* Tipos de archivos que se pueden alamacenar en devspace */}
+            <Card className="group h-full w-full max-w-sm border-primary/20 bg-gradient-to-br from-card/50 to-primary/5 backdrop-blur hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle>Centralización de Recursos</CardTitle>
-                <CardDescription>
-                  Todos tus proyectos, herramientas y documentación en un solo lugar accesible.
+                <CardTitle className="text-xl text-balance">URLs y Enlaces</CardTitle>
+                <CardDescription className="text-muted-foreground text-pretty">
+                  Organiza y accede rápidamente a todos tus recursos web favoritos
                 </CardDescription>
               </CardHeader>
-            </Card>
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Zap className="h-6 w-6 text-primary" />
+              <CardContent className="text-center">
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Documentación externa</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>APIs y servicios</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Herramientas online</span>
+                  </div>
                 </div>
-                <CardTitle>Dashboard Rápido</CardTitle>
-                <CardDescription>
-                  Interfaz optimizada para acceso instantáneo a tus herramientas más utilizadas.
+              </CardContent>
+            </Card>
+
+            <Card className="group h-full w-full max-w-sm border-primary/20 bg-gradient-to-br from-card/50 to-accent/5 backdrop-blur hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="h-8 w-8 text-accent-foreground" />
+                </div>
+                <CardTitle className="text-xl text-balance">Documentación</CardTitle>
+                <CardDescription className="text-muted-foreground text-pretty">
+                  Centraliza toda tu documentación técnica en un solo lugar
                 </CardDescription>
               </CardHeader>
-            </Card>
-            <Card className="group hover:shadow-lg transition-all duration-300 hover:border-primary/50">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Users className="h-6 w-6 text-primary" />
+              <CardContent className="text-center">
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <span>README files</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <span>Guías técnicas</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full"></div>
+                    <span>Notas de proyecto</span>
+                  </div>
                 </div>
-                <CardTitle>Navegación en Unidad</CardTitle>
-                <CardDescription>
-                  Flujo de trabajo cohesivo que mantiene tu concentración y productividad.
+              </CardContent>
+            </Card>
+
+            <Card className="group h-full w-full max-w-sm border-primary/20 bg-gradient-to-br from-card/50 to-secondary/5 backdrop-blur hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Braces className="h-8 w-8 text-secondary-foreground" />
+                </div>
+                <CardTitle className="text-xl text-balance">Código</CardTitle>
+                <CardDescription className="text-muted-foreground text-pretty">
+                  Guarda y sincroniza snippets de código útiles
                 </CardDescription>
               </CardHeader>
+              <CardContent className="text-center">
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                    <span>Snippets reutilizables</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                    <span>Funciones útiles</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                    <span>Templates de código</span>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
+
           </div>
         </div>
       </section>
@@ -211,23 +263,23 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold text-xl">
                 1
               </div>
-              <h3 className="text-xl font-semibold">Instala Devspace</h3>
+              <h3 className="text-xl font-semibold">Instala Devspace 💻</h3>
               <p className="text-muted-foreground">
-                Descarga e instala la aplicación en tu sistema operativo preferido.
+                Descarga e instala Devspace en tu maquina desde nuestro repositorio de GitHub.
               </p>
             </div>
             <div className="space-y-4 max-w-sm">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold text-xl">
                 2
               </div>
-              <h3 className="text-xl font-semibold">Configura tu Espacio</h3>
-              <p className="text-muted-foreground">Personaliza tu dashboard y conecta tus herramientas favoritas.</p>
+              <h3 className="text-xl font-semibold">Configura tu Espacio 🛠️</h3>
+              <p className="text-muted-foreground">Conecta tu base de datos a la API de Devspace.</p>
             </div>
             <div className="space-y-4 max-w-sm">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold text-xl">
                 3
               </div>
-              <h3 className="text-xl font-semibold">¡Despega!</h3>
+              <h3 className="text-xl font-semibold">¡Despega! 🚀</h3>
               <p className="text-muted-foreground">Comienza a desarrollar con mayor eficiencia y productividad.</p>
             </div>
           </div>
@@ -255,14 +307,14 @@ export default function HomePage() {
                 </div>
                 <CardTitle className="text-2xl md:text-3xl text-balance">Estado del Proyecto</CardTitle>
                 <CardDescription className="text-lg max-w-2xl mx-auto text-pretty">
-                  Devspace está actualmente en desarrollo activo. Estamos trabajando arduamente para traerte la mejor
+                  Devspace está actualmente en desarrollo activo. Estamos trabajando para traerte la mejor
                   experiencia de desarrollo posible. ¡Mantente al tanto de nuestras actualizaciones!
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="outline" asChild>
-                    <Link href="https://github.com/devspace" target="_blank">
+                    <Link href="https://github.com/santvallejos/DevSpace-App" target="_blank">
                       <Github className="mr-2 h-4 w-4" />
                       Seguir en GitHub
                     </Link>
@@ -286,11 +338,11 @@ export default function HomePage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Image src="/devspace-logo.png" alt="Devspace" width={24} height={24} className="rounded" />
+                <Image src="/Diseño_sin_título-removebg-preview.png" alt="Devspace" width={24} height={24} className="rounded" />
                 <span className="font-bold">Devspace</span>
               </div>
               <p className="text-sm text-muted-foreground text-pretty">
-                La plataforma definitiva para desarrolladores que buscan optimizar su productividad.
+                La plataforma para desarrolladores que buscan optimizar su productividad.
               </p>
             </div>
             <div className="space-y-4">
@@ -309,24 +361,19 @@ export default function HomePage() {
                     Instalación
                   </Link>
                 </li>
-                <li>
-                  <Link href="/docs#guide" className="text-muted-foreground hover:text-primary transition-colors">
-                    Guía de Uso
-                  </Link>
-                </li>
               </ul>
             </div>
             <div className="space-y-4">
               <h4 className="font-semibold">Comunidad</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#contribute" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href="/docs#contribute" className="text-muted-foreground hover:text-primary transition-colors">
                     Contribuir
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="https://github.com/devspace"
+                    href="https://github.com/santvallejos/DevSpace-App"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     GitHub
@@ -343,19 +390,13 @@ export default function HomePage() {
               <h4 className="font-semibold">Contacto</h4>
               <div className="flex space-x-4">
                 <Link
-                  href="https://github.com/devspace"
+                  href="https://github.com/santvallejos"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="https://twitter.com/devspace"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="mailto:contact@devspace.dev"
+                  href="mailto:vallejossantiago1412@gmail.com"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-5 w-5" />
