@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="https://dev-space-app.vercel.app/">
+              <Link href="https://dev-space-app.vercel.app/" target="_blank">
                 <Rocket className="mr-2 h-5 w-5" />
                 Probar Demo
               </Link>
