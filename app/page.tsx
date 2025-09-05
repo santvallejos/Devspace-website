@@ -129,7 +129,7 @@ export default function HomePage() {
                     preload="metadata"
                     style={{ pointerEvents: 'none' }}
                   >
-                    <source src="/Diseño sin título(1)(1).mp4" type="video/mp4" />
+                    <source src="/Diseño sin título.mp4" type="video/mp4" />
                     Tu navegador no soporta la reproducción de video.
                   </video>
                   

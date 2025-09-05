@@ -14,6 +14,8 @@ import {
   FileText,
   Wrench,
   Heart,
+  Globe,
+  Database
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -63,6 +65,13 @@ export default function DocsPage() {
                   >
                     <Book className="mr-2 h-4 w-4" />
                     Introducción
+                  </Link>
+                  <Link
+                    href="/docs/urlconnection"
+                    className="group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:bg-accent hover:text-accent-foreground"
+                  >
+                    <Database className="mr-2 h-4 w-4" />
+                    Configurar MongoDB Atlas
                   </Link>
                   <Link
                     href="#installation"
@@ -192,18 +201,94 @@ export default function DocsPage() {
                 </Card>
               </section>
 
+              {/* Prerequisites */}
+              <section id="prerequisites" className="space-y-6">
+                <div className="space-y-2">
+                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
+                    Prerrequisitos
+                  </h2>
+                  <p className="text-muted-foreground text-pretty">
+                    Antes de instalar Devspace, asegúrate de tener estos elementos configurados.
+                  </p>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <Settings className="mr-2 h-5 w-5 text-primary" />
+                        MongoDB Atlas
+                      </CardTitle>
+                      <CardDescription>Base de datos en la nube (Requerido)</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground text-pretty">
+                        Devspace necesita una base de datos MongoDB Atlas para funcionar. 
+                        Sigue nuestra guía detallada para crear tu cluster y obtener la URL de conexión.
+                      </p>
+                      <Button asChild className="w-full">
+                        <Link href="/docs/urlconnection">
+                          <Globe className="mr-2 h-4 w-4" />
+                          Configurar MongoDB Atlas
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center">
+                        <Download className="mr-2 h-5 w-5 text-primary" />
+                        .NET 9.0
+                      </CardTitle>
+                      <CardDescription>Runtime de aplicación (Requerido)</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <p className="text-sm text-muted-foreground text-pretty">
+                        Devspace está construido con .NET 9.0. Asegúrate de tener instalada esta versión o superior.
+                      </p>
+                      <Button variant="outline" asChild className="w-full">
+                        <Link href="https://dotnet.microsoft.com/download/dotnet/9.0" target="_blank">
+                          Descargar .NET 9.0
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <Card className="border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/30">
+                  <CardHeader>
+                    <CardTitle className="text-amber-800 dark:text-amber-200">📋 Lista de verificación</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 text-sm text-amber-700 dark:text-amber-300">
+                      <li>• ✅ Cuenta de MongoDB Atlas creada</li>
+                      <li>• ✅ Cluster "Devspace" configurado</li>
+                      <li>• ✅ Base de datos "Unity" creada</li>
+                      <li>• ✅ URL de conexión obtenida</li>
+                      <li>• ✅ .NET 9.0 instalado</li>
+                    </ul>
+                    <p className="text-xs text-amber-600 dark:text-amber-400 mt-3">
+                      Una vez completados estos pasos, estarás listo para instalar Devspace.
+                    </p>
+                  </CardContent>
+                </Card>
+              </section>
+
               {/* Installation */}
               <section id="installation" className="space-y-6">
                 <div>
-                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Requisitos del Sistema</h2>
-                  <p>Para instalar Devspace, asegúrate de que tu sistema cumpla con los siguientes requisitos:</p>
+                  <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">Instalación y Configuración</h2>
+                  <p>Ahora que tienes los prerrequisitos listos, puedes proceder con la instalación de Devspace:</p>
 
-                  <div className="p-4 space-y-2">
-                    <ul className="space-y-1 text-sm text-muted-foreground">
-                      <li>• .Net 9.0</li>
-                      <li>• Url de conexión de Mongo Atlas</li>
-                    </ul>
-                  </div>
+                  <Card className="bg-blue-50 border-blue-200 dark:bg-blue-950/30 dark:border-blue-800 mt-4">
+                    <CardContent className="pt-4">
+                      <p className="text-sm text-blue-700 dark:text-blue-300">
+                        ℹ️ Si aún no has configurado MongoDB Atlas, visita nuestra <Link href="/docs/urlconnection" className="font-semibold underline">guía de configuración</Link> antes de continuar.
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
 
 
@@ -278,7 +363,9 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4">
-                            <code className="text-sm">git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                            <pre className="text-xs sm:text-sm overflow-x-auto whitespace-nowrap">
+                              <code>git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                            </pre>
                           </CardContent>
                         </Card>
                         <Button variant="outline" asChild>
@@ -325,7 +412,7 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4">
-                            <code className="text-sm">npm install</code>
+                            <code className="text-xs sm:text-sm break-all">npm install</code>
                           </CardContent>
                         </Card>
                       </CardContent>
@@ -348,8 +435,8 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4 space-y-2">
-                            <div><code className="text-sm">cd client</code></div>
-                            <div><code className="text-sm">npm install</code></div>
+                            <div><code className="text-xs sm:text-sm break-all">cd client</code></div>
+                            <div><code className="text-xs sm:text-sm break-all">npm install</code></div>
                           </CardContent>
                         </Card>
                       </CardContent>
@@ -372,8 +459,8 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4 space-y-2">
-                            <div><code className="text-sm">cd ../</code></div>
-                            <div><code className="text-sm">cd api</code></div>
+                            <div><code className="text-xs sm:text-sm break-all">cd ../</code></div>
+                            <div><code className="text-xs sm:text-sm break-all">cd api</code></div>
                           </CardContent>
                         </Card>
                         
@@ -431,7 +518,7 @@ export default function DocsPage() {
                         <Card className="bg-amber-50 border-amber-200 dark:bg-amber-950/30 dark:border-amber-800">
                           <CardContent className="pt-4">
                             <p className="text-xs text-amber-700 dark:text-amber-300">
-                              🔧 Reemplaza &lt;username&gt; y &lt;db_password&gt; con tus credenciales de MongoDB Atlas obtenidas en el paso anterior.
+                              🔧 Reemplaza &lt;username&gt; y &lt;db_password&gt; con tus credenciales de MongoDB Atlas. Si no tienes estos datos, consulta nuestra <Link href="/docs/urlconnection" className="font-semibold underline">guía de configuración de MongoDB Atlas</Link>.
                             </p>
                           </CardContent>
                         </Card>
@@ -455,7 +542,7 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4">
-                            <code className="text-sm">dotnet restore</code>
+                            <code className="text-xs sm:text-sm break-all">dotnet restore</code>
                           </CardContent>
                         </Card>
                       </CardContent>
@@ -478,7 +565,7 @@ export default function DocsPage() {
                         </p>
                         <Card className="bg-secondary/50 border-secondary/50">
                           <CardContent className="pt-4">
-                            <code className="text-sm">dotnet run</code>
+                            <code className="text-xs sm:text-sm break-all">dotnet run</code>
                           </CardContent>
                         </Card>
                         <p className="text-sm text-muted-foreground">
@@ -500,10 +587,58 @@ export default function DocsPage() {
                           Devspace está listo para usar
                         </CardDescription>
                       </CardHeader>
-                      <CardContent>
+                      <CardContent className="space-y-4">
                         <p className="text-sm text-green-700 dark:text-green-300">
                           ¡Excelente! Has completado exitosamente la instalación de Devspace. Ahora puedes proceder con la configuración y comenzar a usar la aplicación.
                         </p>
+                        
+                        <div className="border-t border-green-200 dark:border-green-800 pt-4">
+                          <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">🌐 Opciones para usar Devspace</h4>
+                          
+                          <div className="space-y-3">
+                            {/* Opción 1: Demo Online */}
+                            <div>
+                              <p className="text-sm text-green-700 dark:text-green-300 mb-2">
+                                <strong>Opción 1:</strong> Usa nuestra demo online del frontend
+                              </p>
+                              <Button asChild className="w-full bg-green-600 hover:bg-green-700 mb-2">
+                                <Link href="https://dev-space-app.vercel.app/" target="_blank">
+                                  <Globe className="mr-2 h-4 w-4" />
+                                  Abrir Demo de Devspace
+                                </Link>
+                              </Button>
+                            </div>
+                            
+                            {/* Opción 2: Frontend Local */}
+                            <div className="border-t border-green-200 dark:border-green-800 pt-3">
+                              <p className="text-sm text-green-700 dark:text-green-300 mb-2">
+                                <strong>Opción 2:</strong> Ejecuta el frontend localmente
+                              </p>
+                              <div className="space-y-2">
+                                <div>
+                                  <p className="text-xs text-green-600 dark:text-green-400 mb-1">Desde la raíz del proyecto:</p>
+                                  <Card className="bg-green-100 dark:bg-green-900/50 border-green-300 dark:border-green-700">
+                                    <CardContent className="pt-2 pb-2">
+                                      <code className="text-xs break-all">npm run dev:client</code>
+                                    </CardContent>
+                                  </Card>
+                                </div>
+                                <div>
+                                  <p className="text-xs text-green-600 dark:text-green-400 mb-1">O desde la carpeta client:</p>
+                                  <Card className="bg-green-100 dark:bg-green-900/50 border-green-300 dark:border-green-700">
+                                    <CardContent className="pt-2 pb-2">
+                                      <code className="text-xs break-all">cd client && npm run dev</code>
+                                    </CardContent>
+                                  </Card>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <p className="text-xs text-green-600 dark:text-green-400 mt-3">
+                            💡 Ambas opciones se conectarán a tu API local en el puerto 5250.
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
@@ -551,7 +686,9 @@ export default function DocsPage() {
                       </p>
                       <Card className="bg-secondary/50 border-secondary/50">
                         <CardContent className="pt-4">
-                          <code className="text-sm">git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                          <pre className="text-xs sm:text-sm overflow-x-auto whitespace-nowrap">
+                            <code>git clone https://github.com/santvallejos/DevSpace-App.git</code>
+                          </pre>
                         </CardContent>
                       </Card>
                       <Button variant="outline" asChild>
@@ -580,8 +717,8 @@ export default function DocsPage() {
                       </p>
                       <Card className="bg-secondary/50 border-secondary/50">
                         <CardContent className="pt-4 space-y-2">
-                          <div><code className="text-sm">cd DevSpace-App</code></div>
-                          <div><code className="text-sm">cd api</code></div>
+                          <div><code className="text-xs sm:text-sm break-all">cd DevSpace-App</code></div>
+                          <div><code className="text-xs sm:text-sm break-all">cd api</code></div>
                         </CardContent>
                       </Card>
                     </CardContent>
@@ -657,7 +794,7 @@ export default function DocsPage() {
                       <Card className="bg-amber-50 border-amber-200 dark:bg-amber-950/30 dark:border-amber-800">
                         <CardContent className="pt-4">
                           <p className="text-xs text-amber-700 dark:text-amber-300">
-                            🔧 Asegúrate de reemplazar &lt;username&gt; y &lt;db_password&gt; con tus credenciales reales de MongoDB Atlas.
+                            🔧 Asegúrate de reemplazar &lt;username&gt; y &lt;db_password&gt; con tus credenciales reales de MongoDB Atlas. Si necesitas ayuda, consulta nuestra <Link href="/docs/urlconnection" className="font-semibold underline">guía de configuración</Link>.
                           </p>
                         </CardContent>
                       </Card>
@@ -681,7 +818,7 @@ export default function DocsPage() {
                       </p>
                       <Card className="bg-secondary/50 border-secondary/50">
                         <CardContent className="pt-4">
-                          <code className="text-sm">dotnet restore</code>
+                          <code className="text-xs sm:text-sm break-all">dotnet restore</code>
                         </CardContent>
                       </Card>
                     </CardContent>
@@ -704,7 +841,7 @@ export default function DocsPage() {
                       </p>
                       <Card className="bg-secondary/50 border-secondary/50">
                         <CardContent className="pt-4">
-                          <code className="text-sm">dotnet run</code>
+                          <code className="text-xs sm:text-sm break-all">dotnet run</code>
                         </CardContent>
                       </Card>
                       <p className="text-sm text-muted-foreground">
@@ -726,10 +863,27 @@ export default function DocsPage() {
                         La API de Devspace está ejecutándose
                       </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       <p className="text-sm text-purple-700 dark:text-purple-300">
                         ¡Perfecto! La API de Devspace está ejecutándose correctamente. Ya puedes hacer peticiones a la API o conectar una aplicación cliente.
                       </p>
+                      
+                      <div className="border-t border-purple-200 dark:border-purple-800 pt-4">
+                        <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">🌐 Accede a la Demo del Frontend</h4>
+                        <p className="text-sm text-purple-700 dark:text-purple-300 mb-3">
+                          Con tu API ejecutándose en <code className="bg-purple-100 dark:bg-purple-900 px-1 rounded">http://localhost:5250/</code>, 
+                          puedes usar nuestra demo online del frontend de Devspace:
+                        </p>
+                        <Button asChild className="w-full bg-purple-600 hover:bg-purple-700">
+                          <Link href="https://dev-space-app.vercel.app/" target="_blank">
+                            <Globe className="mr-2 h-4 w-4" />
+                            Abrir Demo de Devspace
+                          </Link>
+                        </Button>
+                        <p className="text-xs text-purple-600 dark:text-purple-400 mt-2">
+                          💡 La demo se conectará automáticamente a tu API local una vez que esté funcionando en el puerto 5250.
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -938,6 +1092,14 @@ export default function DocsPage() {
                       className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
                     >
                       Introducción
+                    </Link>
+                  </li>
+                  <li className="mt-0 pt-2">
+                    <Link
+                      href="#prerequisites"
+                      className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
+                    >
+                      Prerrequisitos
                     </Link>
                   </li>
                   <li className="mt-0 pt-2">
