@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="#demo">
+              <Link href="https://dev-space-app.vercel.app/">
                 <Rocket className="mr-2 h-5 w-5" />
                 Probar Demo
               </Link>
@@ -117,32 +117,37 @@ export default function HomePage() {
               </p>
             </div>
             <div className="relative flex justify-center">
-              {/* Video preview de Devspace */}
-              <Card className="p-8 bg-card/50 backdrop-blur border-primary/20 w-full max-w-md">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                    <span className="text-sm text-muted-foreground">Sistema en línea</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 bg-primary/20 rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full w-3/4 animate-pulse"></div>
+              {/* Video demo de Devspace */}
+              <div className="relative w-full max-w-2xl">
+                <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 p-4 backdrop-blur border border-primary/20 shadow-2xl">
+                  <video
+                    className="w-full h-auto rounded-xl shadow-lg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    style={{ pointerEvents: 'none' }}
+                  >
+                    <source src="/Diseño sin título(1)(1).mp4" type="video/mp4" />
+                    Tu navegador no soporta la reproducción de video.
+                  </video>
+                  
+                  {/* Overlay decorativo */}
+                  <div className="absolute inset-0 rounded-xl pointer-events-none">
+                    <div className="absolute top-4 left-4 flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     </div>
-                    <div className="h-2 bg-primary/20 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-primary rounded-full w-1/2 animate-pulse"
-                        style={{ animationDelay: "0.5s" }}
-                      ></div>
-                    </div>
-                    <div className="h-2 bg-primary/20 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-primary rounded-full w-5/6 animate-pulse"
-                        style={{ animationDelay: "1s" }}
-                      ></div>
+                    <div className="absolute top-4 right-4">
                     </div>
                   </div>
                 </div>
-              </Card>
+                
+                {/* Efectos de brillo alrededor del video */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
+              </div>
             </div>
           </div>
         </div>
