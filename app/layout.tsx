@@ -7,10 +7,15 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Devspace - Plataforma para Desarrolladores",
+  title: "Devspace - Centraliza tus recursos",
   description:
     "La plataforma definitiva para desarrolladores. Centraliza tus recursos, acelera tu flujo de trabajo y navega en unidad hacia el éxito.",
   generator: "v0.app",
+  icons: {
+    icon: "/Diseño_sin_título-removebg-preview.png",
+    shortcut: "/Diseño_sin_título-removebg-preview.png",
+    apple: "/Diseño_sin_título-removebg-preview.png",
+  },
 }
 
 export default function RootLayout({
